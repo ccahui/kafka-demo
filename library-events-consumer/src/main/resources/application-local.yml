@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    listener:
+      ack-mode: manual
+      topics: library-events
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: library-event-listener-group

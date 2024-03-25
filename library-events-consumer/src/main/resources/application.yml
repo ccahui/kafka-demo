@@ -1,0 +1,7 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: library-events-consumer
+  profiles:
+    active: local
