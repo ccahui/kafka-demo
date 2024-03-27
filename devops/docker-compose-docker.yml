@@ -28,3 +28,13 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
     depends_on:
       - zoo1
+  library-events-consumer:
+    container_name: library-consumer
+    build:
+      context: ./../library-events-consumer
+      dockerfile: Dockerfile
+    image: library-events-consumer:0.1
+    ports:
+      - 8091:8091
+    depends_on:
+      - kafka1

@@ -1,12 +1,12 @@
 server:
-  port: 8081
+  port: 8091
 spring:
   kafka:
     listener:
       ack-mode: manual
       topics: library-events
     consumer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: kafka1:19092
       key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: library-event-listener-group

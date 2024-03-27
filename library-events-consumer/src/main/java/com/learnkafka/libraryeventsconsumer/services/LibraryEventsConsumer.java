@@ -15,7 +15,7 @@ public class LibraryEventsConsumer {
 
     @KafkaListener(topics = "${spring.kafka.listener.topics}")
     public void onMessage(ConsumerRecord<Integer, String> consumerRecord, Acknowledgment acknowledgment) {
-        log.info("ConsumerRecord : {} ", consumerRecord);
+        log.info("ConsumerRecord a: {} ", consumerRecord);
         // Consumiendo el mensaje y eliminandolo para no consumirlo repetidas veces
         service.processLibraryEvent(consumerRecord);
         acknowledgment.acknowledge();
